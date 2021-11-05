@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.apivotacao.dto.VotacaoResponseDTO;
 import br.com.apivotacao.exception.VotacaoException;
 import br.com.apivotacao.model.Pauta;
 import br.com.apivotacao.model.Votacao;
@@ -48,7 +49,7 @@ public class PautaController {
 	@GetMapping("/{id}")
 	public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
 		try {
-			Pauta pauta = pautaService.buscarPorid(id);
+			Pauta pauta = pautaService.buscarPautaPorid(id);
 			return ResponseEntity.ok(pauta);
 		} catch (VotacaoException e) {
 			return ResponseEntity.notFound().build();
@@ -80,7 +81,7 @@ public class PautaController {
 	@GetMapping("/votacao/{id}")
 	public ResponseEntity<?> votacaoPorId(@PathVariable Long id) {
 		try {
-			Votacao votacao = pautaService.votacaoPorId(id);
+			VotacaoResponseDTO votacao = pautaService.votacaoPorId(id);
 			if(votacao == null) {
 				return ResponseEntity.noContent().build();
 			}else {
