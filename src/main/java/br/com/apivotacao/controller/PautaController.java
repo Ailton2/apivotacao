@@ -18,6 +18,9 @@ import br.com.apivotacao.model.Pauta;
 import br.com.apivotacao.model.Votacao;
 import br.com.apivotacao.model.Voto;
 import br.com.apivotacao.service.PautaService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/pauta")
@@ -26,6 +29,15 @@ public class PautaController {
 	@Autowired
 	private PautaService pautaService;
 
+	@ApiOperation(
+			value = "Persiste uma Pauta",
+			notes = "Persiste uma Pauta",
+			nickname = "salvaPauta",
+			response = Pauta.class
+	)
+	@ApiResponses({
+			@ApiResponse(code = 201, message = "Pauta salva com sucesso.",response = Pauta.class),
+	})
 	@PostMapping
 	public ResponseEntity<?> salvar(@RequestBody Pauta pauta) {
 		try {
@@ -36,6 +48,15 @@ public class PautaController {
 		}
 	}
 
+	@ApiOperation(
+			value = "Retorna lista de Pautas",
+			notes = "Retorna lista de Pautas",
+			nickname = "listaPauta",
+			response = Pauta.class
+	)
+	@ApiResponses({
+			@ApiResponse(code = 200, message = "Pautas retornadas com sucesso.",response = Pauta.class),
+	})
 	@GetMapping
 	public ResponseEntity<?> listarPautas() {
 		try {
@@ -46,6 +67,16 @@ public class PautaController {
 		}
 	}
 
+	@ApiOperation(
+			value = "Retorna uma Pauta por ID",
+			notes = "Retorna uma Pauta por ID",
+			nickname = "buscaPauta",
+			response = Pauta.class
+	)
+	@ApiResponses({
+			@ApiResponse(code = 200, message = "Pauta encontrada com sucesso.",response = Pauta.class),
+			@ApiResponse(code = 204, message = "Pauta não encontrada.")
+	})
 	@GetMapping("/{id}")
 	public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
 		try {
@@ -56,6 +87,15 @@ public class PautaController {
 		}
 	}
 
+	@ApiOperation(
+			value = "Inicia uma votação de uma pauta",
+			notes = "Inicia uma votação de uma pauta",
+			nickname = "listaPauta",
+			response = Votacao.class
+	)
+	@ApiResponses({
+			@ApiResponse(code = 201, message = "votação iniciada com sucesso.",response = Votacao.class),
+	})
 	@PostMapping("/iniciar-votacao")
 	public ResponseEntity<?> iniciarVotacaoo(@RequestBody Votacao votacao) {
 		try {
@@ -68,6 +108,15 @@ public class PautaController {
 
 	}
 
+	@ApiOperation(
+			value = "Realiza o Voto",
+			notes = "Realiza o Voto",
+			nickname = "listaPauta",
+			response = Voto.class
+	)
+	@ApiResponses({
+			@ApiResponse(code = 201, message = "Voto realizado com sucesso.",response = Voto.class),
+	})
 	@PostMapping("/votar")
 	public ResponseEntity<?> votar(@RequestBody Voto voto) {
 		try {
@@ -78,6 +127,16 @@ public class PautaController {
 		}
 	}
 	
+	@ApiOperation(
+			value = "Busca votação por ID e mostra o resultado",
+			notes = "Busca votação por ID e mostra o resultado",
+			nickname = "BuscaVotação",
+			response = Votacao.class
+	)
+	@ApiResponses({
+			@ApiResponse(code = 200, message = "votação encontrada com sucesso.",response = Votacao.class),
+			@ApiResponse(code = 204, message = "votação não encontrada.")
+	})
 	@GetMapping("/votacao/{id}")
 	public ResponseEntity<?> votacaoPorId(@PathVariable Long id) {
 		try {
