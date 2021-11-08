@@ -65,11 +65,11 @@ public class PautaService {
 
 	public Pauta buscarPautaPorid(Long id) {
 
-		Pauta pauta = pautaRepository.findById(id).get();
-		if (pauta == null) {
+		Optional<Pauta> pauta = pautaRepository.findById(id);
+		if (!pauta.isPresent()) {
 			throw new VotacaoException("Não existe pauta para esse id.");
 		}
-		return pauta;
+		return pauta.get();
 	}
 
 	public VotacaoResponseDTO votacaoPorId(Long id) {
