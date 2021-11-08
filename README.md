@@ -19,13 +19,13 @@ http://localhost:8080/apivotacao/swagger-ui/index.html
 
 -----------------------------------------------------------------------------------
 
-##Tecnologias utilizadas  
+#Tecnologias utilizadas  
 
-JAVA  
-Spring Boot
-JPA  
-Maven  
-PostgreSQL
+-JAVA  
+-Spring Boot
+-JPA  
+-Maven  
+-PostgreSQL
 -------------------------------------------------------------------
 # Autor
 
