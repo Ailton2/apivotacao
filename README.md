@@ -1,4 +1,7 @@
 # API para votação de pautas usando spring rest.
+-----------------------------------------------
+## Sobre o projeto  
+Esse projeto foi realizado para teste de conhecimento, o desenvolvimento dessa api é voltado a um sistema de votação de uma pauta.
 
 -----------------------------------------------
 
@@ -16,7 +19,15 @@ http://localhost:8080/apivotacao/swagger-ui/index.html
 
 -----------------------------------------------------------------------------------
 
-Foi utilizado
+##Tecnologias utilizadas  
 
-JAVA e banco de dados PostgreSQL.
+JAVA  
+Spring Boot
+JPA  
+Maven  
+PostgreSQL
+-------------------------------------------------------------------
+# Autor
+
+Ailton Ferreira
 
