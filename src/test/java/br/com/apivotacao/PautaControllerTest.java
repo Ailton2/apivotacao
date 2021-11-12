@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 
-import br.com.apivotacao.controller.PautaController;
+import br.com.apivotacao.controller.PautaControllerImpl;
 import io.restassured.http.ContentType;
 
 @SpringBootTest
 public class PautaControllerTest {
 	
 	@Autowired
-    private PautaController pautaController;
+    private PautaControllerImpl pautaController;
 	
 	@BeforeEach
 	public void setup() {
