@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 
-import br.com.apivotacao.controller.PautaControllerImpl;
+import br.com.apivotacao.controller.impl.PautaControllerImpl;
 import io.restassured.http.ContentType;
 
 @SpringBootTest

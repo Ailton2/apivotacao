@@ -2,7 +2,6 @@ package br.com.apivotacao.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import br.com.apivotacao.model.Pauta;
@@ -24,8 +23,6 @@ public class VotacaoResponseDTO {
     
     private List<VotoReponseDTO> votos;
     
-
-    
     public VotacaoResponseDTO(Votacao votacao) {
     	this.id = votacao.getId();
     	this.dataFim = votacao.getDataFim();
@@ -34,8 +31,4 @@ public class VotacaoResponseDTO {
     			.collect(Collectors.toList());
     }
     
-	public Map<String, Long> getResultado() {
-		return votos.stream().collect(Collectors.groupingBy(VotoReponseDTO::getVoto, Collectors.counting()));
-
-	}
 }

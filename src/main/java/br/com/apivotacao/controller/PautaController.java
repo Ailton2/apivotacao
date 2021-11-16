@@ -35,8 +35,8 @@ public interface PautaController {
 			      response = Pauta.class)
 	@ApiResponses({ @ApiResponse(code = 200, message = "Pauta encontrada com sucesso.", response = Pauta.class),
 			@ApiResponse(code = 204, message = "Pauta não encontrada.") })
-	@GetMapping("/{id}")
-	public ResponseEntity<?> buscarPorId(@PathVariable Long id);
+	@GetMapping("/{idPauta}")
+	public ResponseEntity<?> buscarPorId(@PathVariable Long idPauta);
 
 
 
