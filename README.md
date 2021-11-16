@@ -15,7 +15,10 @@ Foi desenvolvido as seguintes funcionalidades
 ----------------------------------------------------------------------------------
 
 Documetação com Swagger
-http://localhost:8080/apivotacao/swagger-ui/index.html
+http://localhost:8080/apivotacao/v1/swagger-ui/index.html
+
+Versionamento
+Controle de versão na URL via PATH, onde é adicinado no final da URL base "/V1" para identificar a versão da api.
 
 -----------------------------------------------------------------------------------
 
