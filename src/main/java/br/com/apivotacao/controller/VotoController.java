@@ -18,4 +18,5 @@ public interface VotoController {
 	@ApiResponses({ @ApiResponse(code = 201, message = "Voto realizado com sucesso.", response = Voto.class), })
 	@PostMapping("/votar")
 	public ResponseEntity<?> votar(@RequestBody Voto voto);
+	
 }

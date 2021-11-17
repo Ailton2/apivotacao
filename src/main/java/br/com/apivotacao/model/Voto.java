@@ -27,6 +27,7 @@ public class Voto implements Serializable{
 	
 	private String voto;
 	private Long id_eleitor;
+	private String cpf_eleitor;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_votacao")
